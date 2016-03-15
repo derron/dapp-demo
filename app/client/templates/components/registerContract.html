@@ -1,7 +1,7 @@
-<template name="components_multiplyContract">
+<template name="components_registerContract">
     <div class="panel panel-default panel-dapp">
         <div class="panel-heading">
-            {{i18n 'dapp.components.multiplyContract.header'}}
+            Register Contract
         </div>
         <div class="panel-body">
             {{#with TemplateVar.get 'state'}}
@@ -23,7 +23,7 @@
             
                 {{#if isMined}}
                     <div class="alert alert-success">
-                        Your MultiplyContract has been mined!
+                        Your contract has been mined!
                     </div>
             
                     <hr />
@@ -34,37 +34,18 @@
             
                     <input type="text" class="form-control" 
                            value="{{address}}" placeholder="Address" />
-            
-                    <br />
-            
-                    <pre class="well well-info">{{source}}</pre>
                     
                     <hr />
             
-                    <label>
-                        Type a value here to multply:
-                    </label>
-            
-                    <input type="text"
-                            id="multiplyValue"
-                            class="form-control" 
-                            placeholder="{{i18n 'dapp.components.multiplyContract.placeholder'}}" />
-            
-                    <br />
-                    
-                    <p>
-                        Multiply Result: 
-                        <span>{{TemplateVar.get 'multiplyResult'}}</span>
-                    </p>
                 {{/if}}
             
                 {{#if isInactive}}
                     <p class="well well-info">
-                        {{i18n 'dapp.components.multiplyContract.description'}}
+                        Click below button to deploy your contract.
                     </p>
             
                     <button type="button" class="btn btn-default btn-deploy">
-                        {{i18n 'dapp.components.multiplyContract.create'}}
+                        Deploy Contract
                     </button>
                 {{/if}}
             {{/with}}

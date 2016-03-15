@@ -1,0 +1,14 @@
+<template name="components_events">
+    <div class="panel panel-default panel-dapp">
+        <div class="panel-heading">
+            Events
+        </div>
+        <div class="panel-body">
+            <div class="list-group">
+                {{#each events}}
+                    <a target="_blank" href="http://testnet.etherscan.io/block/{{block}}" class="list-group-item">{{formatTime time "YYYY-MM-DD HH:mm:ss"}}: {{msg}}</a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>

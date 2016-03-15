@@ -1,7 +1,9 @@
 <template name="components_accounts">
     <div class="panel panel-default panel-dapp">
         <div class="panel-heading">
-            {{i18n 'dapp.components.accounts.header'}}
+            <span class="pull-left">{{i18n 'dapp.components.accounts.header'}}</span>
+            <button class="btn btn-default pull-right btn-refresh">Refresh</button>
+            <div class="clearfix"></div>
         </div>
         <div class="panel-body">
             <p>{{i18n 'dapp.components.accounts.description'}}</p>
@@ -19,7 +21,7 @@
                 <tbody>
                     {{#each accounts}}
                     <tr>
-                        <td>{{number}}</td>
+                        <td>{{@index}}</td>
                         <td>
                             {{> dapp_identicon identity=address class="dapp-small"}}
                         </td>

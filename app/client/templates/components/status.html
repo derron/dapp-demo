@@ -1,0 +1,29 @@
+<template name="components_status">
+    <div class="panel panel-default panel-dapp">
+        <div class="panel-heading">
+            Status
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <div>
+                    <label>Contract Address</label>
+                    <a target="_blank" href="http://testnet.etherscan.io/address/{{address}}">{{address}}</a>
+                </div>
+                <div>
+                    <span>Total Balance: </span>
+                    <span>{{formatNumber totalBalance "0,0[0000]"}}</span>
+                </div>
+                <div>
+                    <span>User Count: </span>
+                    <span>{{userCount}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <span>Check User:</span>
+                <input type="number" min="0" max="{{maxUserIndex}}" step="1" id="userIndex" value="0">
+                <div>Address: <a target="_blank" href="http://testnet.etherscan.io/address/{{userAddress}}">{{userAddress}}</a></div>
+                <div>Balance: {{formatNumber userBalance "0,0[0000]"}}</div>
+            </div>
+        </div>
+    </div>
+</template>

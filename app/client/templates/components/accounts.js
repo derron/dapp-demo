@@ -13,10 +13,14 @@ The accounts template
 
 // when the template is rendered
 Template["components_accounts"].onRendered(function(){
+    EthAccounts._updateBalance();
 });
 
 // template events
 Template['components_accounts'].events({
+	"click .btn-refresh": function(event, template){ // Create Contract
+		EthAccounts._updateBalance();
+	}
 });
 
 // template handlebar helper methods

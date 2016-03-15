@@ -19,13 +19,13 @@ if (Meteor.isClient) {
 Meteor.startup(function() {
     // set providor, which should be a geth node
     // my RPC settings are: 
-    // geth --rpc --rpcaddr="0.0.0.0" --rpccorsdomain="*" --mine --unlock=YOUR_ACCOUNT --verbosity=5 --maxpeers=0 --minerthreads="3"
+    // geth --testnet  --rpc --rpcaddr="127.0.0.1" --rpcport "8545" --rpccorsdomain="*" --unlock=0
     if(!web3.currentProvider)
-        web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
+        web3.setProvider(new web3.providers.HttpProvider("http://127.0.0.1:8545"));
     
     // Setup EthAccounts
-    EthAccounts.init();
-        
+    //EthAccounts.init();
+
     // SET default language
     if(Cookie.get('TAPi18next')) {
         TAPi18n.setLanguage(Cookie.get('TAPi18next'));

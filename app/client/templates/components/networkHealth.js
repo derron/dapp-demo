@@ -12,7 +12,11 @@ The network health template
 */
 
 Template['components_networkHealth'].helpers({
-	
+
+	'rpcProvider': function() {
+		return web3.currentProvider.host;
+	},
+
 	/**
     Get whether web3 object exists.
 
@@ -97,6 +101,6 @@ Template['components_networkHealth'].helpers({
     */
     
 	'mining': function(){
-		return web3.eth.mining;
+		return web3.eth.mining ? "true" : "false";
 	},
 });
